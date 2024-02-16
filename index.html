@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Valid Form</title>
+
+  <style>
+
+    button:hover {
+      box-shadow: 2px 2px 5px #888888;
+    }
+
+    #validation-message {
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 35px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+  </style>
+</head>
+
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded shadow-md w-96">
+    <h2 class="text-2xl font-semibold mb-4">Formulario</h2>
+    <form id="loginForm">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-600 text-sm font-medium"> <i class="fa-solid fa-user p-2"></i>Nome</label>
+        <input type="text" id="nameBox" name="name" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-600 text-sm font-medium"><i class="fa-solid fa-envelope p-2"></i>Email</label>
+        <input type="email" id="emailBox" name="email" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+      <div class="mb-4">
+        <label for="phone" class="block text-gray-600 text-sm font-medium"><i class="fa-solid fa-phone p-2"></i>Telefone</label>
+        <input type="tel" id="phoneBox" name="phone" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+      <button id="actionButton" type="button" onclick="validateForm()" class="bg-blue-500 text-white p-2 rounded-md w-full">Enviar!</button>
+    </form>
+
+    <p id="textMessage"></p>
+
+  </div>
+
+
+   <div id="validation-message">
+        Envio do formulario bem-sucedido!
+        <span class="close-button" onclick="closeMessage()"><i class="fas fa-times"></i></span>
+    </div>
+  
+
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/f237fde641.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
